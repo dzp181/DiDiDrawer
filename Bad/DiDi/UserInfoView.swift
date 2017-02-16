@@ -17,17 +17,15 @@ class UserInfoView: UIView{
     @IBOutlet weak var footView: UIView!
     @IBOutlet weak var didiName: UILabel!
     @IBOutlet weak var vipButton: UIButton!
-    
     @IBOutlet weak var iconHeight: NSLayoutConstraint!
     
     @IBOutlet weak var iconTop: NSLayoutConstraint!
     @IBOutlet weak var iconViewHeight: NSLayoutConstraint!
     @IBOutlet weak var footViewTop: NSLayoutConstraint!
-    @IBOutlet weak var crowViewTop: NSLayoutConstraint!
     @IBOutlet weak var footViewHeight: NSLayoutConstraint!
     @IBOutlet weak var tableTop: NSLayoutConstraint!
     @IBOutlet weak var footBottom: NSLayoutConstraint!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
 }
 
 extension UserInfoView{

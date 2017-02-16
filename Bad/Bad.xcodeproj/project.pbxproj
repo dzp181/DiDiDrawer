@@ -11,7 +11,12 @@
 		E0153BF01E518D2800B14F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0153BEF1E518D2800B14F69 /* ViewController.swift */; };
 		E0153BF51E518D2800B14F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0153BF41E518D2800B14F69 /* Assets.xcassets */; };
 		E0153BF81E518D2800B14F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0153BF61E518D2800B14F69 /* LaunchScreen.storyboard */; };
+		E01FCF751E553049001CE366 /* jifen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01FCF721E553049001CE366 /* jifen@2x.png */; };
+		E01FCF761E553049001CE366 /* tuijian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01FCF731E553049001CE366 /* tuijian@2x.png */; };
+		E01FCF771E553049001CE366 /* zhaomu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E01FCF741E553049001CE366 /* zhaomu@2x.png */; };
+		E01FCF791E553EAD001CE366 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01FCF781E553EAD001CE366 /* CollectionViewCell.swift */; };
 		E025AA8E1E53F84B00970D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E025AA8D1E53F84B00970D76 /* Main.storyboard */; };
+		E02CD5891E54433600CEAED5 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02CD5881E54433600CEAED5 /* CollectionCell.xib */; };
 		E030613F1E5293E800E49381 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E030613E1E5293E800E49381 /* UserInfoView.xib */; };
 		E03061411E5293F300E49381 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03061401E5293F300E49381 /* UserInfoView.swift */; };
 		E03061431E534DBB00E49381 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03061421E534DBB00E49381 /* PushViewController.swift */; };
@@ -38,7 +43,12 @@
 		E0153BF41E518D2800B14F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0153BF71E518D2800B14F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0153BF91E518D2800B14F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E01FCF721E553049001CE366 /* jifen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jifen@2x.png"; sourceTree = "<group>"; };
+		E01FCF731E553049001CE366 /* tuijian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuijian@2x.png"; sourceTree = "<group>"; };
+		E01FCF741E553049001CE366 /* zhaomu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhaomu@2x.png"; sourceTree = "<group>"; };
+		E01FCF781E553EAD001CE366 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E025AA8D1E53F84B00970D76 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E02CD5881E54433600CEAED5 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 		E030613E1E5293E800E49381 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoView.xib; sourceTree = "<group>"; };
 		E03061401E5293F300E49381 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		E03061421E534DBB00E49381 /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +101,10 @@
 		E0153BEC1E518D2800B14F69 /* DiDi */ = {
 			isa = PBXGroup;
 			children = (
+				E02CD58A1E5451E900CEAED5 /* images */,
+				E02CD5881E54433600CEAED5 /* CollectionCell.xib */,
 				E0153BED1E518D2800B14F69 /* AppDelegate.swift */,
+				E01FCF781E553EAD001CE366 /* CollectionViewCell.swift */,
 				E0153BEF1E518D2800B14F69 /* ViewController.swift */,
 				E03061421E534DBB00E49381 /* PushViewController.swift */,
 				E04B735B1E51B0720019BD63 /* BackGroundView.xib */,
@@ -106,6 +119,16 @@
 				E0153BF91E518D2800B14F69 /* Info.plist */,
 			);
 			path = DiDi;
+			sourceTree = "<group>";
+		};
+		E02CD58A1E5451E900CEAED5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E01FCF721E553049001CE366 /* jifen@2x.png */,
+				E01FCF731E553049001CE366 /* tuijian@2x.png */,
+				E01FCF741E553049001CE366 /* zhaomu@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		F78C5E441E51478E0064CFAF = {
@@ -261,12 +284,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01FCF751E553049001CE366 /* jifen@2x.png in Resources */,
 				E04B73621E51B1960019BD63 /* NavView.xib in Resources */,
 				E0153BF81E518D2800B14F69 /* LaunchScreen.storyboard in Resources */,
 				E0153BF51E518D2800B14F69 /* Assets.xcassets in Resources */,
 				E025AA8E1E53F84B00970D76 /* Main.storyboard in Resources */,
 				E030613F1E5293E800E49381 /* UserInfoView.xib in Resources */,
+				E01FCF761E553049001CE366 /* tuijian@2x.png in Resources */,
+				E02CD5891E54433600CEAED5 /* CollectionCell.xib in Resources */,
 				E04B735C1E51B0720019BD63 /* BackGroundView.xib in Resources */,
+				E01FCF771E553049001CE366 /* zhaomu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +327,7 @@
 				E04B73601E51B18C0019BD63 /* NavView.swift in Sources */,
 				E0153BF01E518D2800B14F69 /* ViewController.swift in Sources */,
 				E03061431E534DBB00E49381 /* PushViewController.swift in Sources */,
+				E01FCF791E553EAD001CE366 /* CollectionViewCell.swift in Sources */,
 				E0153BEE1E518D2800B14F69 /* AppDelegate.swift in Sources */,
 				E04B735E1E51B0810019BD63 /* BackGroundView.swift in Sources */,
 				E03061411E5293F300E49381 /* UserInfoView.swift in Sources */,

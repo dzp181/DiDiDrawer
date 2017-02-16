@@ -8,19 +8,21 @@
 
 import UIKit
 private let animDuration : TimeInterval = 0.5
-private let width : CGFloat = 250
+private let width : CGFloat = UIScreen.main.bounds.size.width*0.64
 private let iconHeight : CGFloat = 100
 
 
-class ViewController: UIViewController,UIGestureRecognizerDelegate,UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate {
+class ViewController: UIViewController,UIGestureRecognizerDelegate,UITableViewDataSource, UITableViewDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     fileprivate lazy var nav : NavView = NavView.navView()
     fileprivate lazy var backgroundView : BackGroundView = BackGroundView.backGroundView()
     fileprivate lazy var userInfo : UserInfoView =  UserInfoView.userInfo()
+    fileprivate lazy var collectionCell : CollectionViewCell = CollectionViewCell.cell()
     let dataArr = ["行程","钱包","客服","设置"]
     let dataImage = ["tourist","wallat","server","setting"]
+    let collectionDataImage = ["积分商城","推荐有奖","司机招募","堵车险","爱心里程","兑换码","办银行卡","企业版","敬老服务","春节红包"]
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -64,7 +66,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UITableViewDa
         let vc1 = PushViewController()
         vc1.title = dataArr[indexPath.row]
         self.navigationController?.pushViewController(vc1, animated: true)
-
+        
     }
     
 }
@@ -85,15 +87,12 @@ extension ViewController {
                                       height: UIScreen.main.bounds.size.height)
         backgroundView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
         view.addSubview(backgroundView)
-        
+    
         
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(tap(tapGes:)))
         tapgesture.delegate = self
         backgroundView.addGestureRecognizer(tapgesture)
         
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(pan(panGes:)))
-        backgroundView.addGestureRecognizer(panGesture)
-
         
         userInfo.frame = CGRect(x: -width ,
                                 y: 0,
@@ -105,13 +104,48 @@ extension ViewController {
         
         userInfo.myTableView.delegate = self
         userInfo.myTableView.dataSource = self
+        userInfo.myTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         userInfo.myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userInfo.myTableView.tableFooterView = UIView()
         userInfo.myTableView.backgroundColor = UIColor.white
         userInfo.crowButton.addTarget(self, action: #selector(crowClick(btn:)), for: .touchDown)
         
+        userInfo.collectionView.dataSource = self
+        userInfo.collectionView.delegate = self
+        userInfo.collectionView.register(UINib(nibName: "CollectionCell", bundle: nil), forCellWithReuseIdentifier: "CollectionCellIdentify")
         
     }
+
+    
+    //实现UICollectionViewDataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return collectionDataImage.count
+    }
+    
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell: CollectionViewCell   = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCellIdentify", for: indexPath) as! CollectionViewCell
+        cell.titleLable.text = collectionDataImage[indexPath.row]
+        return cell;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: width/3, height: 85)
+    }
+  
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView .deselectItem(at: indexPath, animated: true)
+        let vc1 = PushViewController()
+        vc1.title = collectionDataImage[indexPath.row]
+        self.navigationController?.pushViewController(vc1, animated: true)
+        
+    }
+    
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
@@ -123,7 +157,7 @@ extension ViewController {
     }
     
     @objc fileprivate func crowClick(btn: UIButton){
-    
+        
         if  userInfo.footViewHeight.constant > 128 {
             
             btn.setImage(UIImage.init(named: "crow"), for: .normal)
@@ -152,7 +186,7 @@ extension ViewController {
         }
     }
     
-     @objc fileprivate func leftClick(btn: UIButton) {
+    @objc fileprivate func leftClick(btn: UIButton) {
         
         if userInfo.frame.origin.x < 0 {
             backgroundView.isHidden = false
@@ -161,11 +195,7 @@ extension ViewController {
             }
         }
     }
-    
-    @objc fileprivate func pan(panGes : UIPanGestureRecognizer){
-        leftHidden()
-    }
-    
+
     @objc fileprivate func tap(tapGes: UITapGestureRecognizer) {
         leftHidden()
     }
@@ -183,6 +213,6 @@ extension ViewController {
         }
     }
     
-
+    
 }
 
